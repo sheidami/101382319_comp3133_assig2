@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+
+<div class="container border mt-5" [ngStyle]="{ 'width.px': 500 }">
+  <h2>Employee Details</h2>
+  <p><b>First Name:</b> {{ employee.first_name }}</p>
+  <p><b>Last Name:</b> {{ employee.last_name }}</p>
+  <p><b>Email:</b> {{ employee.email }}</p>
+  <p><b>Gender:</b> {{ employee.gender }}</p>
+  <p><b>Salary:</b> {{ employee.salary }}</p>
+</div>
+<div class="container mt-4 text-center">
+  <a class="btn btn-danger" routerLink="/employeeList">Employee list</a>
+</div>

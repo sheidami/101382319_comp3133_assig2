@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light" style="background-color: #B76E79;">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">Employee Management</a>
+    <div class="d-flex w-auto">
+      <p *ngIf="username" class="alignStatus my-auto mx-1">{{username}}</p>
+      <button (click)="logout()" class="btn btn-dark">Logout</button>
+    </div>
+  </div>
+</nav>

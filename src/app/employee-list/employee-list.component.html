@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+
+<div class='container' >
+  <h1>Employee List</h1>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of (employees | async)">
+        <td>{{employee.first_name}}</td>
+        <td>{{employee.last_name}}</td>
+        <td>{{employee.email}}</td>
+        <td>
+          <a href="/viewEmployee/{{employee._id}}" class="btn btn-primary" role="button">View</a>&nbsp;
+          <a href="/addEmployee/{{employee._id}}" class="btn" style="background-color: black; color: white;" role="button">Update</a>&nbsp;
+          <button (click)="deleteEmployee(employee._id)" [disabled]="testUser" class="btn btn-danger"
+            role="button">Delete</button>&nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink="/addEmployee" class='btn align-btn-y btn-primary'>Add New Employee</a>
+</div>

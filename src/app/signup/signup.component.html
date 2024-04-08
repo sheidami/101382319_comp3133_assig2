@@ -1,0 +1,47 @@
+<div>
+  <form class="gradient-custom" (ngSubmit)="handleSignUp()">
+    <div class="container py-5" style="height: 100%">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card text-white" style="border-radius: 1rem; background-color: #B76E79;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                <p class="text-white-50 mb-5">Please enter your username, email and password!</p>
+
+                <div *ngIf="message === 'success'" class="alert alert-success" role="alert">
+                  SuccessFull. Your account has been created
+                </div>
+
+                <div *ngIf="message === 'error'" class="alert alert-danger" role="alert">
+                  User exists. Please try different username or email!
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="username">Username</label>
+                  <input type="text" id="username" class="form-control form-control-lg" [(ngModel)]="username"
+                    name="username" required>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="email">Email</label>
+                  <input type="email" id="email" class="form-control form-control-lg" [(ngModel)]="email" name="email"
+                    required>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="password">Password</label>
+                  <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="password"
+                    name="password" required>
+                </div>
+
+                <button class="btn btn-outline-light btn-lg px-5 mt-3" type="submit">Sign Up</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

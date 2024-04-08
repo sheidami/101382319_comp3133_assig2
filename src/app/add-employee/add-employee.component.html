@@ -1,0 +1,66 @@
+<app-navigation></app-navigation>
+
+<div class="row">
+  <div class="offset-lg-3 col-lg-6">
+    <form (ngSubmit)="onSubmit()" class="container mt-5">
+      <div class="card">
+        <div class="card-title">
+          <h2>{{ employeeID ? 'Update Employee' : 'Add New Employee' }}</h2>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <label for="firstName">First Name</label>
+                <input id="firstName" placeholder="Your First Name" name="firstName" [(ngModel)]="first_name"
+                  class="form-control" type="text" required />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" placeholder="Your Last Name" name="lastName" [(ngModel)]="last_name"
+                  class="form-control" type="text" required />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <label for="email">Email</label>
+                <input id="email" placeholder="Your Email" name="email" [(ngModel)]="email" class="form-control"
+                  type="email" required />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <label class="label-align">Gender:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male"
+                    [(ngModel)]="gender" [checked]="gender === 'Male'" required />
+                  <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female"
+                    [(ngModel)]="gender" [checked]="gender === 'Female'" required />
+                  <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <label for="salary">Salary</label>
+                <input id="salary" placeholder="Your Salary" name="salary" [(ngModel)]="salary" class="form-control"
+                  type="number" required />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group py-3">
+                <button class="btn btn-primary m-2" [disabled]="testUser" type="submit">Save</button>
+                <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
